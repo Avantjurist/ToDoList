@@ -1,0 +1,4 @@
+.progressList {
+  display: flex;
+  justify-content: space-around;
+}

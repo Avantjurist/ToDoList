@@ -1,0 +1,6 @@
+<li>
+  <h3>{{card.data.title}}</h3>
+  <p>{{card.data.description}}</p>
+  <button type="button" name="button-left" ng-click="card.moveToLeft(card.data.id, card.columnNumber)">left</button>
+  <button type="button" name="button-right" ng-click="card.moveToRight(card.data.id, card.columnNumber)">right</button>
+</li>

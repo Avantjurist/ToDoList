@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>ToDoList</title>
+</head>
+<body ng-controller="todoController as todoRoot">
+  <form class="navbar-form" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="title" ng-model="todoRoot.title">
+    <input type="text" class="form-control" placeholder="description" ng-model="todoRoot.description">
+  </div>
+  <button type="button" class="btn btn-default" ng-click="todoRoot.addTodoCard(todoRoot.title, todoRoot.description)">Add ToDo</button>
+</form>
+<div class="progressList">
+  <div ng-repeat="(key, todo) in todoRoot.todos track by $index">
+    <h3>{{todo.title}}</h3>
+    <ul>
+      <todo-card ng-repeat="todoCard in todo.cards" data="todoCard" column-number="key"></todo-card>
+    </ul>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.js" defer></script>
+<!-- <script type="text/javascript" src="app.js"></script> -->
+</body>
+</html>
